@@ -1,0 +1,6 @@
+0,C,-C,-C,-H,-N
+01,C,-S,-H,-C,-H
+02,C,=O,-O,-C,X
+04,N,-H,-C,ee,-H
+011,S,-H,ee,ee,-C
+022,O,-H,ee,ee,-C
