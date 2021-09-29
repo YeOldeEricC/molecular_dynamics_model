@@ -1,0 +1,306 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdftex 2021.9.17)  29 SEP 2021 16:59
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**prot_sim_paper.tex
+(./prot_sim_paper.tex
+! Undefined control sequence.
+l.1 \documentclass
+                  [a4paper,10pt]{article}
+? 
+! Undefined control sequence.
+l.2 \linespread
+               {1.5}
+? 
+! Undefined control sequence.
+l.3 \setlength
+              {\columnseprule}{1pt}
+? 
+! Undefined control sequence.
+l.3 \setlength{\columnseprule
+                             }{1pt}
+? 
+! Undefined control sequence.
+l.5 \usepackage
+               [utf8]{inputenc}
+? 
+! Undefined control sequence.
+l.6 \usepackage
+               [T1]{fontenc}
+? 
+! Undefined control sequence.
+l.7 \usepackage
+               {amsmath}
+? 
+! Undefined control sequence.
+l.8 \usepackage
+               {amsfonts}
+? 
+! Undefined control sequence.
+l.9 \usepackage
+               {amssymb}
+? 
+! Undefined control sequence.
+l.10 \usepackage
+                {mathrsfs}
+? 
+! Undefined control sequence.
+l.12 \usepackage
+                {rotating}
+? 
+! Undefined control sequence.
+l.13 \usepackage
+                [font=bf]{caption}
+? 
+! Undefined control sequence.
+l.14 \usepackage
+                [nottoc]{tocbibind}
+? 
+! Undefined control sequence.
+l.15 \usepackage
+                {enumitem}
+? 
+! Undefined control sequence.
+l.16 \usepackage
+                {cancel}
+? 
+! Undefined control sequence.
+l.17 \usepackage
+                {xcolor}
+? 
+! Undefined control sequence.
+l.18 \usepackage
+                {graphicx}
+? 
+! Undefined control sequence.
+l.19 \usepackage
+                {wrapfig}
+? 
+! Undefined control sequence.
+l.20 \usepackage
+                {caption}
+? 
+! Undefined control sequence.
+l.21 \usepackage
+                {subcaption}
+? 
+! Undefined control sequence.
+l.22 \usepackage
+                {float}
+? 
+! Undefined control sequence.
+l.23 \floatstyle
+                {boxed}
+? 
+! Undefined control sequence.
+l.25 \graphicspath
+                  { {/home/ericc/spaces/extspace/molec_dyn/molecular_dynamic...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.25 ...spath{ {/home/ericc/spaces/extspace/molec_
+                                                  dyn/molecular_dynamics_mod...
+
+? 
+! Extra }, or forgotten $.
+l.25 ...molec_dyn/molecular_dynamics_model/paper/}
+                                                   }
+? 
+! Extra }, or forgotten $.
+l.25 ...lec_dyn/molecular_dynamics_model/paper/} }
+                                                  
+? 
+! Undefined control sequence.
+l.26 \usepackage
+                [margin=0.254\textwidth]{geometry}
+? 
+! Undefined control sequence.
+l.26 \usepackage[margin=0.254\textwidth
+                                       ]{geometry}
+? 
+! Undefined control sequence.
+l.27 \usepackage
+                {array,tabularx}
+? 
+! Undefined control sequence.
+l.28 \usepackage
+                {listings}
+? 
+! Undefined control sequence.
+l.29 \usepackage
+                {ragged2e}
+? 
+! Undefined control sequence.
+l.30 \usepackage
+                {wasysym}
+? 
+! Undefined control sequence.
+l.31 \usepackage
+                {lipsum}
+? 
+! Undefined control sequence.
+l.32 \usepackage
+                {setspace}
+? 
+! Undefined control sequence.
+l.33 \usepackage
+                {pdfpages}
+? 
+! Undefined control sequence.
+l.34 \usepackage
+                {chemfig}
+? 
+! Undefined control sequence.
+l.35 \usepackage
+                {bohr}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.36 
+     
+? 
+
+Overfull \hbox (320.97699pt too wide) in paragraph at lines 1--36
+\tenrm /home/ericc/spaces/extspace/molec$[]\teni yn=molecular[]ynamics[]odel=pa
+per=\tenrm [\teni margin \tenrm = 0\teni :\tenrm 254][][][][][][][][][][]$ |
+
+\hbox(7.5+2.5)x469.75499
+.\tenrm /
+.\tenrm h
+.\tenrm o
+.\tenrm m
+.\tenrm e
+.etc.
+
+! Undefined control sequence.
+l.37 \setbohr
+             {
+? 
+! Undefined control sequence.
+l.41 \definecolor
+                 {backcolour}{rgb}{0.22,0.22,0.22}
+? 
+! Undefined control sequence.
+l.42 \renewcommand
+                  {\ttdefault}{pcr}
+? 
+! Undefined control sequence.
+l.42 \renewcommand{\ttdefault
+                             }{pcr}
+? 
+! Undefined control sequence.
+l.44 \lstdefinestyle
+                    {mystyle}{
+? 
+! Undefined control sequence.
+l.45 	backgroundcolor=\color
+                            {backcolour},
+? 
+! Undefined control sequence.
+l.46 	commentstyle=\color
+                         {red},
+? 
+! Undefined control sequence.
+l.47 	keywordstyle=\color
+                         {green},
+? 
+! Undefined control sequence.
+l.48 	numberstyle=\small
+                        \color{gray},
+? 
+! Undefined control sequence.
+l.48 	numberstyle=\small\color
+                              {gray},
+? 
+! Undefined control sequence.
+l.49 	stringstyle=\color
+                        {yellow},
+? 
+! Undefined control sequence.
+l.50 	basicstyle=\ttfamily
+                          \bfseries\footnotesize\color{white},
+? 
+! Undefined control sequence.
+l.50 	basicstyle=\ttfamily\bfseries
+                                   \footnotesize\color{white},
+? 
+! Undefined control sequence.
+l.50 	basicstyle=\ttfamily\bfseries\footnotesize
+                                                \color{white},
+? 
+! Undefined control sequence.
+l.50 ...tyle=\ttfamily\bfseries\footnotesize\color
+                                                  {white},
+? 
+! Undefined control sequence.
+l.63 \lstset
+            {style=mystyle}
+? 
+
+Overfull \hbox (63.9405pt too wide) in paragraph at lines 44--64
+[]\tenrm mystyle back-ground-color=backcolour, com-mentstyle=red, key-word-styl
+e=green, num-ber-style=gray, stringstyle=yellow,|
+
+\hbox(6.94444+1.94444)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm m
+.\kern-0.27779
+.\tenrm y
+.\tenrm s
+.etc.
+
+! Undefined control sequence.
+l.65 \newenvironment
+                    {tightcenter}{%
+? 
+! Undefined control sequence.
+l.66   \setlength
+                 \topsep{0pt}
+? 
+! Undefined control sequence.
+l.66   \setlength\topsep
+                        {0pt}
+? 
+! Undefined control sequence.
+l.67   \setlength
+                 \parskip{0pt}
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   {
+l.67   \setlength\parskip{
+                          0pt}
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   {
+l.67   \setlength\parskip{
+                          0pt}
+? 
+! Undefined control sequence.
+l.68   \begin
+             {center}
+? 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] )
+(\end occurred inside a group at level 3)
+
+### simple group (level 3) entered at line 69 ({)
+### simple group (level 2) entered at line 25 ({)
+### simple group (level 1) entered at line 25 ({)
+### bottom level</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on prot_sim_paper.pdf (1 page, 38398 bytes).
+PDF statistics:
+ 20 PDF objects out of 1000 (max. 8388607)
+ 13 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
