@@ -10,7 +10,8 @@ t_0 = time.time();
 # end program at specific place 
 def end(t) : return exit('-- RUN TIME %1.3f --' % (time.time()-t));
 # folder path
-fldr_path = '/home/ericc/spaces/extspace/prot_sim';
+#fldr_path = '/home/ericc/spaces/extspace/prot_sim';
+fldr_path = '/Users/ericc/Desktop/molec_dyn/molecular_dynamics_model';
 # 3 letter codes for the 20 amino acids
 name_arr = ['Ala','Arg','Asn','Asp','Cys','Gln','Glu','Gly','His','Ile','Leu','Lys','Met','Phe','Pro','Ser','Thr','Trp','Tyr','Val'];
 # 1 letter codes for the 20 amino acids
