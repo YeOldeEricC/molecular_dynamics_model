@@ -3,13 +3,15 @@ from matplotlib import pyplot as plt;
 
 # circle stuff
 def circ_func(x_in,r,x0,y0) :
-	tmp = ma.sqrt((r**2) - ((x_in-x0)**2));
+	tmp0 = (r**2) - ((x_in-x0)**2);
+	if tmp0 < 0 : return [0,0];
+	tmp = ma.sqrt(tmp0);
 	out0 = y0-tmp;
 	out1 = y0+tmp;
 	return [out0,out1];
 
 r = 1;
-x0 = 2;
+x0 = 1/2;
 y0 = 0;
 
 # straight line
@@ -17,7 +19,7 @@ def line_func(x_in,m,b) :
 	return m*(x_in-b);
 
 m = 1/4;
-b = 2;
+b = -1;
 
 # intersections
 def intersect(m,b,x0,y0,r) :
@@ -41,22 +43,32 @@ def l_tilde(x0,y0,x1,y1) :
 	out = ma.sqrt(((y1-y0)**2) + ((x1-x0)**2));
 	return out;
 
-m = [i for i in np.linspace(-1,1,401)];
+#m = [i for i in np.linspace(-1,1,401)];
 l_t = [];
 
-plot = plt.figure();
-for i in m :
-	tmp = intersect(i,b,x0,y0,r);
-	tmp_l = l_tilde(tmp[0][0],tmp[0][1],tmp[1][0],tmp[1][1]);
-	l_t.append(tmp_l)
-	print(i,tmp_l);
-	if tmp_l > 0 :
-		plt.plot(tmp[0][0],tmp[0][1],'kx');
-		plt.plot(tmp[1][0],tmp[1][1],'ko');
+# circle lines;
+x_range = [i for i in np.linspace(-2,2,401)];
+y_circ0 = [circ_func(i,r,x0,y0)[0] for i in x_range];
+y_circ1 = [circ_func(i,r,x0,y0)[1] for i in x_range];
+y_line = [line_func(i,m,b) for i in x_range];
 
-plt.plot(m,l_t,'k-');
-plt.xlabel(r'$m$');
-plt.ylabel(r'$\tilde{\ell}$')
+
+plot = plt.figure();
+plt.plot(x_range,y_circ0,'k-');
+plt.plot(x_range,y_circ1,'k-');
+plt.plot(x_range,y_line,'k--');
+#for i in m :
+#	tmp = intersect(i,b,x0,y0,r);
+#	tmp_l = l_tilde(tmp[0][0],tmp[0][1],tmp[1][0],tmp[1][1]);
+#	l_t.append(tmp_l)
+#	print(i,tmp_l);
+#	if tmp_l > 0 :
+#		plt.plot(tmp[0][0],tmp[0][1],'kx');
+#		plt.plot(tmp[1][0],tmp[1][1],'ko');
+#
+#plt.plot(m,l_t,'k-');
+plt.xlabel(r'$x$');
+plt.ylabel(r'$y$');
 plt.show();
 
 
