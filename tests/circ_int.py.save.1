@@ -19,13 +19,13 @@ def t_now(t0) :
 
 ## relabelling mathematical functions
 def sin(x) : return ma.sin(x);
-def arcsin(x) : return ma.asin(x);
+def arcsin(x) : return ma.arcsin(x);
 
 def cos(x) : return ma.cos(x);
-def arccos(x) : return ma.acos(x);
+def arccos(x) : return ma.arccos(x);
 
 def tan(x) : return ma.tan(x);
-def arctan(x) : return ma.atan(x);
+def arctan(x) : return ma.arctan(x);
 
 def log(x) : return ma.log(x);
 def sqrt(x) : return ma.sqrt(x);
@@ -109,13 +109,10 @@ def lb2p(x0,y0,x1,y1) :
 	length = sqrt(in_sqrt);
 	print(t_now(t0)[1],'lb2p: length=%1.5f' % (length));
 	return length;
-# maximum angle/gradient
-def max_grad(d_x,rad,centre) :
-	d = centre[0] - d_x;
-	ang = arcsin(rad/d);
-	max_m = tan(ang);
-	return [max_m,ang];
-
+# maximum gradient possible
+def max_grad(grad,d_x,rad,centre) :
+	h = centre[0] - d_x;
+	ty
 
 ## 3D functions
 # parametrric straight line
@@ -167,9 +164,7 @@ d_x = -1;
 rad = 1;
 orig = [0.5,0];
 
-max_m = max_grad(d_x,rad,orig)[0];
-
-m_range = [i if i != 0 else 1e-12 for i in np.linspace(0,max_m,num_pts)];
+m_range = [i if i != 0 else 1e-12 for i in np.linspace(0,2,num_pts)];
 
 x_ints = [x_circ_intersects(m,d_x,rad,orig) for m in m_range];
 y_ints = [y_circ_intersects(m,d_x,rad,orig) for m in m_range];
