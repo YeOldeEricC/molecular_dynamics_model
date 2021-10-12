@@ -81,26 +81,13 @@ def x_circ_intersects(grad,d_x,rad,centre) :
 		xm = (phi_b + pm(sqrt_pt)[1])/phi_a;
 		#print(t_now(t0)[1],'x_circ_intersects: xm=%1.3f  xp=%1.3f' % (xm,xp));
 		return [xm,xp];
-
+# can just use the line2D for y p/m
 def y_circ_intersects(grad,d_x,rad,centre) :
 	test = x_circ_intersects(grad,d_x,rad,centre);
-	if test == [0,0] :
-		print('y_circ_intersects ERR: impossible x-intercept. Setting to zero.');
-		return [0,0];
-	phi_a = pow(grad,-2) + 1;
-	phi_b = centre[1] - (d_x/m) + (centre[0]/grad);
-	phi_c = pow(centre[0],2) + pow(centre[1],2) - pow(rad,2) + pow(d_x,2) - (2*centre[0]*d_x);
-	in_sqrt = pow(phi_b,2) - (phi_a*phi_c);
-	#print('y_circ_intersects:\n    phi_a =\t%+1.3f\n    phi_b =\t%+1.3f\n    phi_c =\t%+1.3f\n    sqrt  =\t%+1.5f' % (phi_a,phi_b,phi_c,in_sqrt));
-	if in_sqrt < 0 :
-		print('y_circ_intersects ERR: -ve value in the sqrt. Setting to zero.');
-		return [0,0];
-	else :
-		sqrt_pt = sqrt(in_sqrt);
-		yp = (phi_b + pm(sqrt_pt)[0])/phi_a;
-		ym = (phi_b + pm(sqrt_pt)[1])/phi_a;
-		#print(t_now(t0)[1],'y_circ_intersects: ym=%1.3f  yp=%1.3f' % (ym,yp));
-		return [ym,yp];
+	yp = grad*(test[1]-d_x);
+	ym = grad*(test[0]-d_x);
+	return [ym,yp];
+
 # length between 2 points (lb2p)
 def lb2p(x0,y0,x1,y1) :
 	dy = y1-y0;
@@ -139,14 +126,14 @@ num_pts = 5001;
 # gradient
 m = 0.25;
 # x-intercept
-d_x = -1;
+d_x = -3;
 # value lists
 x_line = [i for i in np.linspace(-2,2,num_pts)];
 y_line = [line2D(x,[m,d_x]) for x in x_line];
 
 ## circle params
-rad = 1;
-orig = [0.5,0.2];
+rad = 0.6;
+orig = [0.9,0];
 
 # value lists
 x_circ = [i for i in np.linspace(orig[0]-rad,orig[0]+rad,num_pts)];
@@ -161,15 +148,14 @@ y_intersects = y_circ_intersects(m,d_x,rad,orig);
 length = lb2p(x_intersects[0],y_intersects[0],x_intersects[1],y_intersects[1]);
 
 ### panning gradient in 2D
-num_pts = 401;
-
-d_x = -1;
-rad = 1;
-orig = [0.5,0];
+num_pts = 2501;
+epsilon = 1e-12;
 
 max_m = max_grad(d_x,rad,orig)[0];
 
-m_range = [i if i != 0 else 1e-12 for i in np.linspace(0,max_m,num_pts)];
+m_range = [i if i != 0 else 1e-12 for i in np.linspace(-max_m+epsilon,max_m-epsilon,num_pts)];
+x_range = [i for i in [min([d_x,orig[0]+rad]),max([d_x,orig[0]+rad])]];
+lines = [[line2D(x,[m,d_x]) for x in x_range] for m in m_range];
 
 x_ints = [x_circ_intersects(m,d_x,rad,orig) for m in m_range];
 y_ints = [y_circ_intersects(m,d_x,rad,orig) for m in m_range];
@@ -188,14 +174,19 @@ for i in range(0,num_pts) :
 plot0 = plt.figure();
 plt.title('Testing fns that produce lines & intersections');
 # line
-plt.plot(x_line,y_line,'k--');
+#plt.plot(x_line,y_line,'k--');
+for i in range(0,num_pts) :
+	plt.plot(x_range,lines[i],'r:',alpha=0.05);
+	plt.plot(xm[i],ym[i],'bo',alpha=0.05);
+	plt.plot(xp[i],yp[i],'bo',alpha=0.05);
+
 # circ upper
 plt.plot(x_circ,yp_circ,'k');
 # circ lower
 plt.plot(x_circ,ym_circ,'k');
 # intersections
-plt.plot(x_intersects[0],y_intersects[0],'bo');
-plt.plot(x_intersects[1],y_intersects[1],'bo');
+#plt.plot(x_intersects[0],y_intersects[0],'bo');
+#plt.plot(x_intersects[1],y_intersects[1],'bo');
 
 plot1 = plt.figure();
 plt.title('Looking at length between intersections, panning gradient');
