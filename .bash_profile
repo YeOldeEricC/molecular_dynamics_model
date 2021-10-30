@@ -53,7 +53,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 
 alias c="clear"
+# git commit / update
 alias gc="bash git_commit.sh"
 alias n="nano"
 alias py="python"
 alias π="source .bash_profile"
+alias ∫="bash"
+# make file
+alias mkf="touch"
