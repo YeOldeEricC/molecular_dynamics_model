@@ -13,13 +13,14 @@ elec_neg1 = 1;
 # num of electrons involved in the covalent bond
 electrons_shared = 1;
 
+## Functions - Whether relabels or completely custom
+
 # re-labelling maths functions
 def sqrt(x) : return cma.sqrt(x);
 def sin(x) : return cma.sin(x);
 def cos(x) : return cma.cos(x);
 def tan(x) : return cma.tan(x);
 def pow(x,n) : return x**n;
-
 
 # all vectors will be three-vectors as will be working in xyz
 
@@ -31,6 +32,8 @@ def pnt_dist(ri,rj) : return sqrt(sum([pow((rj[i]-ri[i]),2) for i in [0,1,2]]));
 def vec_add(ri,rj) : return [ri[i] + rj[i] for i in [0,1,2]];
 # minus the first vector from the second element-wise
 def vec_minus(ri,rj) : return [rj[i] - ri[i] for i in [0,1,2]];
+# multiply a vector by a constant
+def vec_mult(r,n) : return [n*r[i] for i in [0,1,2]];
 # dot product of two vectors
 def vec_dot(ri,rj) : return sum([(ri[i]*rj[i]) for i in [0,1,2]]);
 # cross product of two vectors
@@ -52,4 +55,11 @@ def vec_cross(ri,rj) :
 def Coulomb_F(ri,rj,qi,qj,kq) : return [(kq*qi*qj)*((rj[i] - ri[i])/pow(pnt_dist(ri,rj),3)) for i in [0,1,2]];
 # Gravitational force vector output
 def Gravity_F(ri,rj,Mi,Mj,kG) : return [(kG*Mi*Mj)*((rj[i] - ri[i])/pow(pnt_dist(ri,rj),3)) for i in [0,1,2]];
-
+# Lorentz force vector output
+def Lorentz_F(qi,vi,vj,Ej,Bj) :
+	# F = q(E + [v x B])
+	relative_v = vec_minus(vj,vi);
+	vxB = vec_cross(relative_v,Bj);
+	in_brackets = vec_add(Ej,vxB);
+	return vec_mult(in_brackets,qi);
+# whatever other force is there.
