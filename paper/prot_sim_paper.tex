@@ -22,7 +22,8 @@
 \usepackage{float}
 \floatstyle{boxed}
 %\restylefloat{figure}
-\graphicspath{ {/home/ericc/spaces/extspace/molec_dyn/molecular_dynamics_model/paper/} }
+%\graphicspath{ {/home/ericc/spaces/extspace/molec_dyn/molecular_dynamics_model/paper/} }
+\graphicspath{ {./paper/} }
 \usepackage[margin=0.254\textwidth]{geometry}
 \usepackage{array,tabularx}
 \usepackage{listings}
@@ -104,56 +105,50 @@ to be done at some point
 
 \section{Mathematics -}
 \subsection{Geometry -}
-\subsubsection{Line Intersecting a Circle in 2D -}
+\subsubsection{Line Intersecting an '\textit{n}'-dimensional sphere -}
 In Cartesian coordinates the generalised equation for a circle with an arbitrary origin is as such:
 \begin{equation}
 \left( x - x_0 \right)^2 + \left( y - y_0 \right)^2 = \rho^2
 \end{equation}
-Where $x_0,y_0$ are the coordinates of the origin and $rho$ the radius of the circle. We also need an equation for a line for which we shall use:
+But for generality we cannot use the $x_0$ notation used above to denote the origin coordinates. Thus, we shall say these are elements of a wider vector of $n$ length/dimension, and each element counts as a coordinate. We shall therefore call this vector $\underline{\omega}$. We shall also treat $x$ and $y$ and so on in the same way by saying these are part of a vector which we shall label $\underline{r}$. Then for the inside of the brackets above to match up with new vector notation, we need simply subtract $\underline{\omega}$ from $\underline{r}$. Then take the dot product with itself, which looks as such:
 \begin{equation}
-y = m(x-b)
+\rho^2 = (\underline{r}-\underline{\omega}) \cdot (\underline{r}-\underline{\omega})
 \end{equation}
-With $m$ the gradient of the line and $b$ the the $x$-intercept. Then we substitute the latter into the circle equation.
+Which for convenience we shall change the above notation be like so:
 \begin{equation}
-\left( x - x_0 \right)^2 + \left( m\left( x-b \right) - y_0 \right)^2 = \rho^2
+	\rho^2 = (\underline{r}-\underline{\omega})^{\cdot 2}
 \end{equation}
-Then work through as follows:
+Next, instead of our nice and simple two dimensional line of $y = mx + c$, we need to use a parametric form to have a line in higher dimensions. Like the $+c$ being an offset for the 2D line, we generalise the offsets for each axis in a vector $\underline{\delta}$. We will also assume that the $x$, $y$, $z$... components are a function of some parameter $t$ with each dimension having some gradient $m_i$ for the $i$th direction. Which we shall also keep in a vector labelled $\underline{m}$. Thus for each dimension, we have equations of the form:
 \begin{equation}
-x^2 + x_0^2 - 2 x_0 x + m^2\left( x-b \right)^2 + y_0^2 - 2y_0 m \left( x-b \right) = \rho^2
+x_i = m_i t - \delta_i \ \ \Leftrightarrow \ \ t = \frac{x_i + \delta_i}{m_i}
+\end{equation}
+Then for the last bit of housekeeping, the above $x_i$ will be the elements of the $\underline{r}$ vector that corresponds to the points of the line.
+
+We can then substitute this into the previous equation that we have for a generalised sphere, which gives us:
+\begin{equation}
+\rho^2 = (\underline{m} t - \underline{\delta} - \underline{\omega})^{\cdot 2}
 \end{equation}
 \begin{equation}
-x^2 + x_0^2 - 2x_0 x + m^2 x^2 + m^2 b^2 - 2m^2 b x + y_0^2 - 2y_0 mx + 2y_0 mb = \rho^2
-\end{equation}
-\begin{equation}
-x^2 \left( 1 + m^2 \right) - 2x\left( x_0 + m^2 b + m y_0 \right) + \left( x_0^2 + y_0^2 - \rho^2 + m^2 b^2 + 2mb y_0 \right) = 0
+	\rho^2 = \underline{m}^{\cdot 2} t^2 - 2  \underline{m} \cdot (\underline{\delta} + \underline{\omega}) t + \underline{\delta}^{\cdot 2} + \underline{\omega}^{\cdot 2} + 2 \underline{\delta} \cdot \underline{\omega}
 \end{equation}
 Then letting:
 \begin{equation}
-\varphi_0 = \left( 1 + m^2 \right)
+\varphi_a = \underline{m}^{\cdot 2}
 \end{equation}
 \begin{equation}
-\varphi_1 = \left( x_0 + m^2 b + m y_0 \right)
+\varphi_b = \underline{m} \cdot (\underline{\delta} + \underline{\omega})
 \end{equation}
 \begin{equation}
-\varphi_2 = \left( x_0^2 + y_0^2 - \rho^2 + m^2 b^2 + 2mb y_0 \right)
-\end{equation}
-Resulting with
-\begin{equation}
-\varphi_0 x^2 - 2 \varphi_1 x + \varphi_2 = 0
+\varphi_c = \underline{\delta}^{\cdot 2} + \underline{\omega}^{\cdot 2} + 2 \underline{\delta} \cdot \underline{\omega} - \rho^2
 \end{equation}
 \begin{equation}
-\Rightarrow \ \ \ \ x = \frac{\varphi_1 \pm \sqrt{\varphi_1^2 - \varphi_1 \varphi_2}}{\varphi_0}
+\Rightarrow \ \ 0 = \varphi_a t^2 - 2\varphi_b t + \varphi_c
 \end{equation}
+The above can then be used to gain the two values of $t$ via use of the quadratic formula, which keeping the '$-2$' in the equation above makes the formula somewhat nicer to use.
 \begin{equation}
-\Rightarrow \ \ \ \ x = x^\pm
+t = \frac{1}{\varphi_a} \left(\varphi_b \pm \sqrt{\varphi_b^2 - \varphi_a \varphi_c} \right)
 \end{equation}
-
-
-
-
-
-
-
+$$ \Rightarrow \ \ t = t^\pm $$
 
 \section{The Natural Amino Acids -}
 \rule{\textwidth}{1pt}

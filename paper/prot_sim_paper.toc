@@ -1,0 +1,35 @@
+\contentsline {section}{List of Figures}{3}{}%
+\contentsline {section}{List of Tables}{3}{}%
+\contentsline {section}{\numberline {1}Introduction -}{4}{}%
+\contentsline {section}{\numberline {2}Mathematics -}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Geometry -}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Line Intersecting an '\textit {n}'-dimensional sphere -}{4}{}%
+\contentsline {section}{\numberline {3}The Natural Amino Acids -}{5}{}%
+\contentsline {subsection}{\numberline {3.1}What We Will be Looking At -}{5}{}%
+\contentsline {section}{\numberline {4}Turning Structural Formulae into Tables -}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Rules to Turn into Table -}{6}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Tetrahedral -}{7}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Trigonal Planar -}{7}{}%
+\contentsline {subsection}{\numberline {4.2}Preserving Correct Chirality -}{8}{}%
+\contentsline {section}{\numberline {A}Structural, Skeletal Formulae \& Structure Tables -}{9}{}%
+\contentsline {subsection}{\numberline {A.1}Alanine -}{9}{}%
+\contentsline {subsection}{\numberline {A.2}Arginine -}{9}{}%
+\contentsline {subsection}{\numberline {A.3}Asparagine -}{10}{}%
+\contentsline {subsection}{\numberline {A.4}Aspartic Acid -}{10}{}%
+\contentsline {subsection}{\numberline {A.5}Cysteine -}{10}{}%
+\contentsline {subsection}{\numberline {A.6}Glutamine -}{11}{}%
+\contentsline {subsection}{\numberline {A.7}Glutamic Acid -}{11}{}%
+\contentsline {subsection}{\numberline {A.8}Glycine -}{12}{}%
+\contentsline {subsection}{\numberline {A.9}Histidine -}{12}{}%
+\contentsline {subsection}{\numberline {A.10}Isoleucine -}{12}{}%
+\contentsline {subsection}{\numberline {A.11}Leucine -}{13}{}%
+\contentsline {subsection}{\numberline {A.12}Lysine -}{13}{}%
+\contentsline {subsection}{\numberline {A.13}Methionine -}{14}{}%
+\contentsline {subsection}{\numberline {A.14}Phenylalanine -}{14}{}%
+\contentsline {subsection}{\numberline {A.15}Proline -}{15}{}%
+\contentsline {subsection}{\numberline {A.16}Serine -}{15}{}%
+\contentsline {subsection}{\numberline {A.17}Threonine -}{16}{}%
+\contentsline {subsection}{\numberline {A.18}Tryptophan -}{16}{}%
+\contentsline {subsection}{\numberline {A.19}Tyrosine -}{17}{}%
+\contentsline {subsection}{\numberline {A.20}Valine -}{17}{}%
+\contentsline {section}{References}{19}{}%

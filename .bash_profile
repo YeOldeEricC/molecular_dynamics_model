@@ -56,7 +56,7 @@ alias c="clear"
 # git commit / update
 alias gc="bash git_commit.sh"
 alias n="nano"
-alias py="python"
+alias py="/Users/ericc/anaconda3/bin/python"
 alias π="source .bash_profile"
 alias ∫="bash"
 # make file
