@@ -8,43 +8,42 @@ from matplotlib import pyplot as plt;
 
 
 lib_notes = '''
----     NOTES     ---\n
-This file will end up being the main library of functions that will be used\n
-in the main program files. For all the mathematical functions, complex\n
-numbers will the main port of numerical dealings.\n
-\n
-All functions listed below are the ones fully finished and thus usable.\n
-\n
---- FUNCTION LIST ---\n
- --    RELABEL    --\n
-sin(val) - returns sin of val\n
-asin(val) - returns arcsin of val\n
-\n
-cos(val) - returns cos of val\n
-acos(val) - returns arccos of val\n
-\n
-tan(val) - returns tan of val\n
-atan(val) - returns arctan of val\n
-\n
-sqrt(val) - returns sqrt of val\n
-shape(arr) - returns the shape of an arr\n
-\n
- --    CUSTOMS    --\n
-vec_check(v_list) - check if all vecs are the same length\n
-vec3_check(v_list) - check if list only contains 3D vectors\n
-det_2x2(m) - returns the determinant of a 2x2 matrix\n
-vec_mult(const,v) - multiplies vec by a constant\n
-vec_add(v0,v1) - adds two vectors element-wise\n
-vec_min(v0,v1) - subtracts first inp vec from the second element-wise\n
-vec_dot(v0,v1) - returns dot product of two vectors\n
-vec_cross(v0,v1) - returns cross product between two vectors\n
-vec_dot2(v0) - returns my sq dot notation (dot vec with itself)\n
-vec_dotL(v_list) - returns dot product of a set of vectors (my notation)\n
-\n
- --     PLOTS     --\n
- --     DEBUG     --\n
- notes(lib_notes) - print this output\n
-\n
+---     NOTES     ---
+This file will end up being the main library of functions that will be used
+in the main program files. For all the mathematical functions, complex
+numbers will the main port of numerical dealings.
+
+All functions listed below are the ones fully finished and thus usable.
+
+--- FUNCTION LIST ---
+ --    RELABEL    --
+sin(val) - returns sin of val
+asin(val) - returns arcsin of val
+cos(val) - returns cos of val
+acos(val) - returns arccos of val
+tan(val) - returns tan of val
+atan(val) - returns arctan of val
+sqrt(val) - returns sqrt of val
+shape(arr) - returns the shape of an arr
+
+ --    CUSTOMS    --
+vec_check(v_list) - check if all vecs are the same length
+vec3_check(v_list) - check if list only contains 3D vectors
+det_2x2(m) - returns the determinant of a 2x2 matrix
+vec_mult(const,v) - multiplies vec by a constant
+vec_add(v0,v1) - adds two vectors element-wise
+vec_sub(v0,v1) - subtracts first inp vec from the second element-wise
+vec_dot(v0,v1) - returns dot product of two vectors
+vec_cross(v0,v1) - returns cross product between two vectors
+vec_dot2(v0) - returns my sq dot notation (dot vec with itself)
+vec_dotL(v_list) - returns dot product of a set of vectors (my notation)
+
+ --     PLOTS     --
+ 
+
+ --     DEBUG     --
+ notes() - print this output
+
 '''
 
 #--    RELABEL    --#
@@ -91,7 +90,7 @@ def vec_add(v0,v1) :
 		i_list = range(0,v_len);
 		return [v0[i] + v1[i] for i in i_list];
 
-def vec_min(v0,v1) :
+def vec_sub(v0,v1) :
 	if vec_check([v0,v1]) == -1 :
 		exit('VEC_MIN ERR - vector lengths not equal.');
 	else :
