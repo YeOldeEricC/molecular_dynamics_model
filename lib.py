@@ -25,6 +25,7 @@ tan(val) - returns tan of val
 atan(val) - returns arctan of val
 sqrt(val) - returns sqrt of val
 shape(arr) - returns the shape of an arr
+pow(val,n) - returns value raised to power 'n'
 
  --    CUSTOMS    --
 vec_check(v_list) - check if all vecs are the same length
@@ -42,8 +43,7 @@ vec_dotL(v_list) - returns dot product of a set of vectors (my notation)
  
 
  --     DEBUG     --
- notes() - print this output
-
+notes() - print this output
 '''
 
 #--    RELABEL    --#
@@ -57,6 +57,7 @@ def tan(x) : return cma.tan(x);
 def atan(x) : return cma.atan(x);
 
 def sqrt(x) : return cma.sqrt(x);
+def pow(x,n) : return x**n;
 # returns the shape of array as python list
 def shape(arr) : return [i for i in np.asarray(arr).shape];
 
