@@ -37,7 +37,7 @@ vec_sub(v0,v1) - subtracts first inp vec from the second element-wise
 vec_dot(v0,v1) - returns dot product of two vectors
 vec_cross(v0,v1) - returns cross product between two vectors
 vec_dot2(v0) - returns my sq dot notation (dot vec with itself)
-vec_dotL(v_list) - returns dot product of a set of vectors (my notation)
+vec_dotL(v_list) - returns dot product of a list of vectors (my notation)
 
  --     PLOTS     --
  
@@ -138,7 +138,7 @@ def vec_cross(v0,v1) :
 		exit('VEC_CROSS ERR - not all vectors are 3D.');
 	else :
 		m0 = [	[ri[1],ri[2]],
-		[rj[1],rj[2]]];
+				[rj[1],rj[2]]];
 		d0 = det(m0);
 
 		m1 = [	[ri[0],ri[2]],
