@@ -69,9 +69,9 @@ scale = 50;
 x = [[j for j in np.linspace(x_lim[0],x_lim[1],grid_sz)] for i in range(0,grid_sz)];
 y = [[i for j in range(0,grid_sz)] for i in np.linspace(y_lim[0],y_lim[1],grid_sz)];
 
-def Ex(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(x[i][j]-r[0])/sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
+def Ex(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(x[i][j]-r[0])/pow(sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)),3) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
 
-def Ey(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(y[i][j]-r[1])/sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
+def Ey(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(y[i][j]-r[1])/pow(sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)),3) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
 
 Exs = [Ex(kq,q[i],r[i],x,y,grid_sz,scale) for i in range(0,num_charges)];
 Eys = [Ey(kq,q[i],r[i],x,y,grid_sz,scale) for i in range(0,num_charges)];

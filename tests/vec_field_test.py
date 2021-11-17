@@ -1,3 +1,13 @@
+###
+'''
+
+In here is a test for plotting vector fields with elec field as example for
+point sources in a arrangement. Effectively need matrices for x, y and the
+magnitudes for each component.
+
+'''
+###
+
 import time,os,sys,math as ma,cmath as cma, numpy as np;
 from matplotlib import pyplot as plt;
 from mpl_toolkits.mplot3d import Axes3D;
@@ -8,12 +18,11 @@ def sqrt(x) : return ma.sqrt(x);
 # coulomb const
 kq = 1;
 # number of electrons
-num_elec = 6;
+num_elec = 8;
 # radius
-rad = [0.5];
+rad = [0.25,0.4,0.5,0.55,0.6];
 # atom centres
-centre = [	[-0.3,0.05],
-			[0.3,-0.05]];
+centre = [[0,0]];
 
 # pos and charge arrs
 r = []; q = [];
@@ -29,18 +38,18 @@ for k in range(0,len(centre)) :
 
 num_charges = len(q);
 
-grid_sz = 300;
+grid_sz = 400;
 x_lim = [-1,1];
 y_lim = [-1,1];
-scale = 50;
+scale = 1e-3;
 
 # used to replace np.meshgrid
 x = [[j for j in np.linspace(x_lim[0],x_lim[1],grid_sz)] for i in range(0,grid_sz)];
 y = [[i for j in range(0,grid_sz)] for i in np.linspace(y_lim[0],y_lim[1],grid_sz)];
 
-def Ex(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(x[i][j]-r[0])/sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
+def Ex(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(x[i][j]-r[0])/pow(sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)),3) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
 
-def Ey(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(y[i][j]-r[1])/sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
+def Ey(kq,q,r,x,y,grid_sz,scale) : return [[scale*kq*q*(y[i][j]-r[1])/pow(sqrt(pow((x[i][j]-r[0]),2) + pow((y[i][j]-r[1]),2)),3) for j in range(0,grid_sz)] for i in range(0,grid_sz)];
 
 Exs = [Ex(kq,q[i],r[i],x,y,grid_sz,scale) for i in range(0,num_charges)];
 Eys = [Ey(kq,q[i],r[i],x,y,grid_sz,scale) for i in range(0,num_charges)];
