@@ -1,10 +1,6 @@
-import os;
-import sys;
-import time;
-import math as ma;
-import cmath as cma;
-import numpy as np;
-
 import lib;
+import prot_lib as prot;
 
 lib.notes();
+
+prot.notes();

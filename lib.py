@@ -8,7 +8,6 @@ from matplotlib import pyplot as plt;
 
 ###
 '''
-
 -- IN CODE NOTES --
 if function or marked with one of the following symbols, it means:
 	#- mtw -#	=>	made, tested, working
@@ -30,6 +29,8 @@ s - should
 ###
 
 lib_notes = '''
+--- GENERAL FUNCTION LIBRARY ---
+
 ---     NOTES     ---
 All functions listed below are the ones fully finished
 and thus should be usable.
@@ -56,6 +57,7 @@ shape(arr) - returns the shape of an arr
 pow(val,n) - returns value raised to power 'n'
 
  --    CUSTOMS    --
+  -    VECTORS    -
 vec_check(v_list) - check if all vecs are the same length
 vec3_check(v_list) - check if list only contains 3D vectors
 det_2x2(m) - returns the determinant of a 2x2 matrix
@@ -69,13 +71,14 @@ vec_dotL(v_list) - returns dot product of a list of vectors (my notation)
 vec_dist(v0,v1) - returns the distance between two vectors
 c_vec_dist(v0,v1) - returns complex valued distance between two vectors
 
-
  --     PLOTS     --
- 
 
  --     DEBUG     --
 notes() - print this output
+
 '''
+
+#---   GENERAL   ---#
 
 #--    RELABEL    --#
 #-     REAL FN     -#
@@ -113,7 +116,10 @@ def c_sqrt(x) : return cma.sqrt(x);
 #-      OTHER      -#
 def pow(x,n) : return x**n;
 # returns the shape of array as python list
-def shape(arr) : return [i for i in np.asarray(arr).shape];
+def shape(arr) : 
+	np_shp = np.asarray(arr).shape;
+	py_shp = [i for i in np_shp];
+	return py_shp;
 
 #--    CUSTOMS    --#
 #-     VECTORS     -#
