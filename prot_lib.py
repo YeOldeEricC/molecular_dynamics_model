@@ -48,7 +48,7 @@ notes() - print this output
 #---  FUNCTIONS  ---#
 #- mtw -#
 def ld_struc(name) :
-	FILE = open('./struc_arrays/%s_struc.txt' % name, 'r');
+	file = open('./struc_arrays/%s_struc.txt' % name, 'r');
 	arr_out = [];
 	while True :
 		line = file.readline();
