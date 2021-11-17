@@ -1,3 +1,34 @@
+###
+'''
+-- NOTE --
+This file is merely for temporary code tests.
+Any successful test will have its own test file.
+
+'''
+###
+
+import time,os,sys,math as ma,cmath as cma, numpy as np;
+from matplotlib import pyplot as plt;
+from mpl_toolkits.mplot3d import Axes3D;
+
+
+
+################################################################################
+################################################################################
+
+###
+'''
+ANYTHING BELOW HERE IS OLD, ALREADY TESTED CODE
+'''
+###
+
+exit('All testing code ran.');
+
+################################################################################
+################################################################################
+
+## VECTOR FIELD PLOTS ##
+
 import time,os,sys,math as ma,cmath as cma, numpy as np;
 from matplotlib import pyplot as plt;
 from mpl_toolkits.mplot3d import Axes3D;
@@ -63,9 +94,5 @@ for i in range(0,num_charges) :
 plt.gca().set_aspect('equal', adjustable='box')
 plt.show();
 
-
-# u = x/np.sqrt(x**2 + y**2)
-# v = y/np.sqrt(x**2 + y**2)
-
-# plt.quiver(x,y,u,v)
-# plt.show()
+################################################################################
+################################################################################
