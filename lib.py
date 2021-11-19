@@ -24,11 +24,10 @@ t - tested
 y - yet
 w - work / working
 s - should
-
 '''
 ###
 
-lib_notes = '''
+LIB_NOTES = '''
 --- GENERAL FUNCTION LIBRARY ---
 
 ---     NOTES     ---
@@ -235,4 +234,4 @@ def c_vec_dist(v0,v1) :
 
 #--     DEBUG     --#
 #- mtw -#
-def notes() : print(lib_notes);
+def notes() : print(LIB_NOTES);
