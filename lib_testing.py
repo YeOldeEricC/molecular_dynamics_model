@@ -10,3 +10,4 @@ while lc < 25 :
 	print(test);
 
 	lc += 1;
+
