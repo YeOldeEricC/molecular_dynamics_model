@@ -54,6 +54,7 @@ c_sqrt(val) - returns complex result for sqrt of val
 
 shape(arr) - returns the shape of an arr
 pow(val,n) - returns value raised to power 'n'
+pts(llim,ulim,num) - returns evenly spaced points between two limits
 
  --    CUSTOMS    --
   -    VECTORS    -
@@ -71,6 +72,17 @@ vec_dist(v0,v1) - returns the distance between two vectors
 c_vec_dist(v0,v1) - returns complex valued distance between two vectors
 
  --     PLOTS     --
+  -    FMT_STR    -
+The format string is just a set of characters which describe how the outp plot
+looks. Order of string: '[c][s]' :
+	c - colour
+	s - style, ex. == _ (solid), - (dashed), . (dotted), 
+
+
+  -   FUNCTIONS   -
+pl_init() - relabel of plt.figure();
+pl_line(fmt,x,y,title,xlab,ylab)
+pl_disp() - display plot
 
  --     DEBUG     --
 notes() - print this output
@@ -112,12 +124,15 @@ def c_atan(x) : return cma.atan(x);
 def c_sqrt(x) : return cma.sqrt(x);
 
 #-      OTHER      -#
+#- mtw -#
 def pow(x,n) : return x**n;
-# returns the shape of array as python list
+#- mtw -#
 def shape(arr) : 
 	np_shp = np.asarray(arr).shape;
 	py_shp = [i for i in np_shp];
 	return py_shp;
+#- mtw -#
+def pts(llim,ulim,num) : return [i for i in np.linspace(llim,ulim,num)];
 
 #--    CUSTOMS    --#
 #-     VECTORS     -#
@@ -231,6 +246,19 @@ def c_vec_dist(v0,v1) :
 		return c_sqrt(sum([pow((v1[i]-v0[i]),2) for i in i_list]));
 
 #--     PLOTS     --#
+#- mtw -#
+def pl_init() : plt.figure();
+#- mtw -#
+def pl_disp() : plt.show();
+#- mtw -#
+def pl_line(fmt,x,y) :
+	# format sorting - only style needs actual work
+	style = '';
+	if fmt[1] == '_' : style = '-';
+	if fmt[1] == '-' : style = '--';
+	if fmt[1] == '.' : style = ':';
+	line_style = '%s%s' % (fmt[0],style);
+	plt.plot(x,y,line_style);
 
 #--     DEBUG     --#
 #- mtw -#

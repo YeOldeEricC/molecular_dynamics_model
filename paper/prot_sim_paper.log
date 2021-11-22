@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.18)  12 NOV 2021 19:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.18)  22 NOV 2021 14:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -865,56 +865,54 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 \openout6 = `prot_sim_paper.lot'.
 
 
-[3] [4]
-<images/rna_ecode.png, id=35, 1699.44pt x 2001.32307pt>
+[3] [4] [5]
+<images/rna_ecode.png, id=39, 1699.44pt x 2001.32307pt>
 File: images/rna_ecode.png Graphic file (type png)
 <use images/rna_ecode.png>
 Package pdftex.def Info: images/rna_ecode.png  used on input line 159.
 (pdftex.def)             Requested size: 253.3522pt x 298.35324pt.
- [5]
+ [6 <./images/rna_ecode.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ []
 
-[6 <./images/rna_ecode.png>]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 211--227
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 207--223
 []$[]$$[]$ 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 230--244
+Overfull \hbox (15.0pt too wide) in paragraph at lines 226--240
 []$[]$$[]$ 
  []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 302--317
+Underfull \hbox (badness 10000) in paragraph at lines 298--313
 
  []
 
 
-Overfull \hbox (6.1904pt too wide) in paragraph at lines 353--355
+Overfull \hbox (6.1904pt too wide) in paragraph at lines 349--351
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--358
+Underfull \hbox (badness 10000) in paragraph at lines 338--354
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--403
+Underfull \hbox (badness 10000) in paragraph at lines 384--399
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 430--445
+Underfull \hbox (badness 10000) in paragraph at lines 426--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--487
+Underfull \hbox (badness 10000) in paragraph at lines 468--483
 
  []
 
@@ -922,27 +920,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 472--487
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 513--528
+Underfull \hbox (badness 10000) in paragraph at lines 509--524
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 556--571
+Underfull \hbox (badness 10000) in paragraph at lines 552--567
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--614
+Underfull \hbox (badness 10000) in paragraph at lines 595--610
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 638--653
+Underfull \hbox (badness 10000) in paragraph at lines 634--649
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--698
+Underfull \hbox (badness 10000) in paragraph at lines 679--694
 
  []
 
@@ -950,12 +948,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 683--698
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 726--741
+Underfull \hbox (badness 10000) in paragraph at lines 722--737
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 769--784
+Underfull \hbox (badness 10000) in paragraph at lines 765--780
 
  []
 
@@ -963,12 +961,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 769--784
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 813--828
+Underfull \hbox (badness 10000) in paragraph at lines 809--824
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 856--871
+Underfull \hbox (badness 10000) in paragraph at lines 852--867
 
  []
 
@@ -976,12 +974,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 856--871
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 902--917
+Underfull \hbox (badness 10000) in paragraph at lines 898--913
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 945--960
+Underfull \hbox (badness 10000) in paragraph at lines 941--956
 
  []
 
@@ -989,12 +987,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 945--960
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 986--1001
+Underfull \hbox (badness 10000) in paragraph at lines 982--997
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 1028--1043
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1039
 
  []
 
@@ -1002,12 +1000,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1028--1043
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1077--1092
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1088
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 1123--1138
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1134
 
  []
 
@@ -1017,10 +1015,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23371 strings out of 478994
- 457172 string characters out of 5858183
+ 23372 strings out of 478994
+ 457181 string characters out of 5858183
  1071515 words of memory out of 5000000
- 40412 multiletter control sequences out of 15000+600000
+ 40413 multiletter control sequences out of 15000+600000
  425245 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,14n,102p,659b,1208s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1047,7 +1045,7 @@ onts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fon
 ts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
 ype1/public/cm-super/sfti1000.pfb>
-Output written on prot_sim_paper.pdf (19 pages, 453539 bytes).
+Output written on prot_sim_paper.pdf (19 pages, 453507 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams

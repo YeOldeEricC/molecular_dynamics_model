@@ -1,0 +1,35 @@
+### TODO FOR LIB SETUP
+
+## KEY ##
+#DONE - done
+#IFND - if needed
+#INPR - in progress
+#TODO - to be done
+#UGNT - urgent
+#WNND - when needed
+
+## RELABELLING FNS
+- math lib trig						#DONE
+- math lib sqrt						#DONE
+- cmath lib trig					#DONE
+- cmath lib sqrt					#DONE
+- numpy arr shape					#DONE
+- pow (normally x**n)				#DONE
+
+## VECTOR MATHS - filling as needed
+- dot prod							#DONE
+- dot prod with self				#DONE
+- dot prof of >2 vecs				#DONE
+- elem-wise addition				#DONE
+- elem-wise subtraction				#DONE
+- cross prod						#DONE
+- dist between two vecs				#DONE
+- 2x2 matrix determinant			#DONE
+- 3d vec check						#DONE
+- same len vec check				#DONE
+
+
+## PLOTTING - underway
+- initialise						#DONE
+- display							#DONE
+- x,y line plot w/ formatting		
