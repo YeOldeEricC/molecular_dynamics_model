@@ -7,6 +7,15 @@
 #TODO - to be done
 #UGNT - urgent
 #WNND - when needed
+#KUTD - keeping up to date
+
+## DEBUG ##
+- printable notes					#KUTD
+- support for coloured prints		#DONE
+- coloured err outputs				£DONE
+- err outp w/ src fn & ln 			#DONE
+- err outp w/ func src fn & ln 		#DONE
+- rejig err messages				
 
 ## RELABELLING FNS
 - math lib trig						#DONE
@@ -32,4 +41,5 @@
 ## PLOTTING - underway
 - initialise						#DONE
 - display							#DONE
-- x,y line plot w/ formatting		
+- x,y line plot w/ formatting		#DONE
+- title & label formatting			#DONE

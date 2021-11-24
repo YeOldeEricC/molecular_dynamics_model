@@ -5,6 +5,16 @@ import math as ma;
 import cmath as cma;
 import numpy as np;
 from matplotlib import pyplot as plt;
+import inspect as insp;
+
+### TEXT COLOURS ###
+RED = '0;31;1';
+BLUE = '0;34;1';
+CYAN = '0;36;1';
+MAGENTA = '0;35;1';
+GREEN = '0;32;1';
+YELLOW = '0;33;1';
+WHITE = '0;37;1';
 
 ###
 '''
@@ -35,6 +45,15 @@ All functions listed below are the ones fully finished
 and thus should be usable.
 
 --- FUNCTION LIST ---
+ --     DEBUG     --
+notes() - print this output
+term_colour_fmt() - prints table of coloured print outs
+col_txt(col,txt) - returns string of coloured text
+err_inf() - prints code and func source files and linenumbers
+err_msg(fname,msg) - exits with error message for function
+err_log(fname,msg) - prints error message for function w/o exit
+
+
  --    RELABEL    --
 sin(val) - returns sin of val
 asin(val) - returns arcsin of val
@@ -74,22 +93,99 @@ c_vec_dist(v0,v1) - returns complex valued distance between two vectors
  --     PLOTS     --
   -    FMT_STR    -
 The format string is just a set of characters which describe how the outp plot
-looks. Order of string: '[c][s]' :
-	c - colour
-	s - style, ex. == _ (solid), - (dashed), . (dotted), 
+looks. 
 
+For 'pl_lineL' order of fmt string: '[c][s]' :
+	c - colour
+	s - style, ex. == _ (solid), - (dashed), . (dotted)
+
+For 'pl_lineF' order of fmt string: '[c][s]w[int]a[flt]' :
+	c - colour
+	s - style, ex. == _ (solid), - (dashed), . (dotted)
+	w - linewidth
+	a - alpha, float: 'a' elem of [0,1]
+
+For 'pl_label' order of fmt string: 'T[y/n]s[int]w[str]L[y/n]s[int]p[b/pc]' :
+	T - title section
+	L - legend section
+	y/n - yes or no
+	s - font size
+	w - font weight
+	p - legend position, b (best) or pc (position code) in pl_pc(posc)
 
   -   FUNCTIONS   -
-pl_init() - relabel of plt.figure();
-pl_line(fmt,x,y,title,xlab,ylab)
+pl_init() - relabel of plt.figure()
 pl_disp() - display plot
-
- --     DEBUG     --
-notes() - print this output
+pl_font(name) - set font to specific 'name', or Times if 'def'
+pl_label(title,xlab,ylab,legend) - overall plot labels
+pl_lineL(fmt,x,y) - simple line plot with [L]ittle formatting
+pl_lineF(fmt,title,x,y) - simple line plot with [F]ull formatting
+pl_fw(fwc) - returns string for fontweight for title formatting
+pl_pc(posc) - returns position string for the legend for position code
 
 '''
 
 #---   GENERAL   ---#
+#--     DEBUG     --#
+#- mtw -#
+def notes() : print(LIB_NOTES);
+#- mtw -#
+def term_colour_fmt():
+	# prints table of formatted text format options
+	# ref: https://stackoverflow.com/questions/287871/
+	#	how-to-print-colored-text-to-the-terminal 
+	# dat: [23/11/2021]
+	s_list = range(0,8);
+	fg_list = range(30,38);
+	bg_list = range(40,48);
+	for style in s_list :
+		for fg in fg_list :
+			outp_str = ''
+			for bg in bg_list :
+				# bg = 1 for coloured text on normal bg
+				fmt = '%d;%d;%d' % (style,fg,bg);
+				outp_str += '\x1b[%sm %s \x1b[0m' % (fmt, fmt);
+			print(outp_str);
+	print('\n');
+#- mtw -#
+def col_txt(col,txt) : return '\x1b[%sm%s\x1b[0m' % (col,txt);
+#- mtw -#
+def err_inf() :
+	info = insp.stack();
+	info_prs = [];
+	err_info = col_txt(RED,'##');
+	for i in info :
+		fil = ''; typ = ''; # typ = type: C (code), F (func)
+		if 'molecular_dynamics_model/' in str(i.filename) :
+			# case if function is from lib (as should be)
+			fil = str(i.filename).split('molecular_dynamics_model/')[1];
+			typ = 'F';
+		else :
+			fil = i.filename;
+			typ = 'C';
+		if str(i.function) != 'err_inf' :
+			txt0 = col_txt(MAGENTA,typ);
+			txt1 = col_txt(CYAN,'src: ');
+			txt2 = col_txt(WHITE,fil);
+			txt3 = col_txt(CYAN,'line: ');
+			txt4 = col_txt(WHITE,str(i.lineno));
+			txt_inst = ' %s%s%s, %s%s ' % (txt0,txt1,txt2,txt3,txt4);
+			err_info += col_txt(CYAN,txt_inst);
+			err_info += col_txt(RED,'##');
+	print(err_info);
+#- mtw -#
+def err_msg(fname,msg) :
+	name_pt = col_txt(RED,'%s ERR - ' % fname);
+	msg_pt = col_txt(CYAN, '%s.' % msg)
+	exit_str = name_pt + msg_pt;
+	exit(exit_str);
+#- mtw -#
+def err_log(fname,msg) :
+	name_pt = col_txt(RED,'%s ERR - ' % fname);
+	msg_pt = col_txt(CYAN, '%s.' % msg)
+	exit_str = name_pt + msg_pt;
+	print(exit_str);
+
 #--    RELABEL    --#
 #-     REAL FN     -#
 #- mtw -#
@@ -162,7 +258,8 @@ def vec_mult(const,v) :
 #- mtw -#
 def vec_add(v0,v1) :
 	if vec_check([v0,v1]) == -1 :
-		exit('VEC_ADD ERR - vector lengths not equal.');
+		err_inf();
+		err_msg('VEC_ADD','vector lengths not equal');
 	else :
 		v_len = len(v0);
 		i_list = range(0,v_len);
@@ -170,7 +267,8 @@ def vec_add(v0,v1) :
 #- mtw -#
 def vec_sub(v0,v1) :
 	if vec_check([v0,v1]) == -1 :
-		exit('VEC_MIN ERR - vector lengths not equal.');
+		err_inf();
+		err_msg('VEC_MIN ERR','vector lengths not equal');
 	else :
 		v_len = len(v0);
 		i_list = range(0,v_len);
@@ -178,7 +276,8 @@ def vec_sub(v0,v1) :
 #- mtw -#
 def vec_dot(v0,v1) :
 	if vec_check([v0,v1]) == -1 :
-		exit('VEC_DOT ERR - vector lengths not equal.');
+		err_inf()
+		err_msg('VEC_DOT ERR','vector lengths not equal');
 	else :
 		v_len = len(v0);
 		i_list = range(0,v_len);
@@ -191,7 +290,8 @@ def vec_dot2(v) :
 #- mtw -#
 def vec_dotL(v_list) :
 	if vec_check(v_list) == -1 :
-		exit('VEC_DOT2 ERR - vector lengths not equal.');
+		err_inf();
+		err_msg('VEC_DOT2 ERR','vector lengths not equal');
 	else :
 		v_len = len(v_list[0]);
 		list_len = len(v_list)
@@ -207,13 +307,15 @@ def vec_dotL(v_list) :
 #- mtw -#
 def det_2x2(m) :
 	if shape(m) != [2,2] :
-		exit('DET_2X2 ERR - non 2x2 matrix input.');
+		err_msg();
+		err_msg('DET_2X2 ERR','non 2x2 matrix input');
 	else :
 		return ((m[0][0]*m[1][1]) - (m[0][1]*m[1][0]));
 #- mtw -#
 def vec_cross(v0,v1) :
 	if vec3_check([v0,v1]) == -1 :
-		exit('VEC_CROSS ERR - not all vectors are 3D.');
+		err_inf();
+		err_msg('VEC_CROSS ERR','not all vectors are 3D');
 	else :
 		m0 = [	[v0[1],v0[2]],
 				[v1[1],v1[2]]];
@@ -231,7 +333,8 @@ def vec_cross(v0,v1) :
 #- mtw -#
 def vec_dist(v0,v1) : 
 	if vec_check([v0,v1]) == -1 :
-		exit('VEC_LEN ERR - vector lengths not equal.');
+		err_inf();
+		err_msg('VEC_LEN ERR','vector lengths not equal');
 	else :
 		v_len = len(v0);
 		i_list = range(0,v_len);
@@ -239,7 +342,8 @@ def vec_dist(v0,v1) :
 #- mtw -#
 def c_vec_dist(v0,v1) : 
 	if vec_check([v0,v1]) == -1 :
-		exit('VEC_LEN ERR - vector lengths not equal.');
+		err_inf();
+		err_msg('VEC_LEN ERR','vector lengths not equal');
 	else :
 		v_len = len(v0);
 		i_list = range(0,v_len);
@@ -251,7 +355,43 @@ def pl_init() : plt.figure();
 #- mtw -#
 def pl_disp() : plt.show();
 #- mtw -#
-def pl_line(fmt,x,y) :
+def pl_fw(fwc) :
+	# due to using 'L' for 'legend', using 'w' for 'light' aka 'weak'
+	if fwc == 'd' : return 'normal';
+	if fwc == 'b' : return 'bold';
+	if fwc == 'h' : return 'heavy';
+	if fwc == 'w' : return 'light';
+	if fwc == 'B' : return 'ultrabold';
+	if fwc == 'W' : return 'ultralight';
+	# in the case that no above cases have been satisfied
+	else :
+		err_inf();
+		err_log('PL_FW ERR','no known code used, setting to default');
+		err_log('MSG','continuing..');
+		print('\n');
+		return 'normal';
+#- mtw -#
+def pl_pc(posc) :
+	pos = '';
+	if posc == 'b' :
+		pos = 'best';
+	else :
+		pos_pt1 = '';
+		pos_pt2 = '';
+		if posc[0] == 'u' : pos_pt1 = 'upper';
+		if posc[0] == 'c' : pos_pt1 = 'center';
+		if posc[0] == 'l' : pos_pt1 = 'lower';
+		if posc[1] == 'r' : pos_pt2 = 'right';
+		if posc[1] == 'c' : pos_pt2 = 'center';
+		if posc[1] == 'l' : pos_pt2 = 'left';
+		pos = '%s %s' % (pos_pt1,pos_pt2);
+	return pos;
+#- mtw -#
+def pl_font(name) :
+	font = 'Times New Roman' if name == 'def' else name;
+	plt.rcParams['font.family'] = font;
+#- mtw -#
+def pl_lineL(fmt,x,y) :
 	# format sorting - only style needs actual work
 	style = '';
 	if fmt[1] == '_' : style = '-';
@@ -259,7 +399,39 @@ def pl_line(fmt,x,y) :
 	if fmt[1] == '.' : style = ':';
 	line_style = '%s%s' % (fmt[0],style);
 	plt.plot(x,y,line_style);
-
-#--     DEBUG     --#
 #- mtw -#
-def notes() : print(LIB_NOTES);
+def pl_lineF(fmt,x,y,lab) :
+	# extract line style
+	style = '';
+	if fmt[1] == '_' : style = '-';
+	if fmt[1] == '-' : style = '--';
+	if fmt[1] == '.' : style = ':';
+	line_style = '%s%s' % (fmt[0],style);
+	# extract line width and alpha
+	tmp = fmt.split('w')[1].split('a');
+	lw = int(tmp[0]);
+	al = float(tmp[1]);
+	plt.plot(x,y,line_style,linewidth=lw,alpha=al,label=lab);
+#- mtw -#
+def pl_label(fmt,title,xlab,ylab) :
+	tmp = fmt.split('T')[1].split('L');
+	fmt_T = tmp[0];
+	fmt_L = tmp[1];
+	# extracting title formatting
+	if fmt_T[0] != 'n' :
+		tmp0 = fmt_T.split('s')[1].split('w');
+		s = int(tmp0[0]);
+		w = pl_fw(str(tmp0[1]));
+		plt.title(title,fontsize=s,fontweight=w);
+	# extracting legend formatting
+	if fmt_L[0] != 'n' :
+		tmp1 = fmt_L.split('s')[1].split('p');
+		s = int(tmp1[0]);
+		p = pl_pc(tmp1[1]);
+		plt.legend(fontsize=s,loc=p);
+	plt.xlabel(xlab);
+	plt.ylabel(ylab);
+	
+
+
+
