@@ -4,7 +4,7 @@ import prot_lib as prot;
 lib.notes();
 prot.notes();
 
-lib.term_colour_fmt();
+# lib.term_colour_fmt();
 
 x = lib.pts(-2,2,100);
 y = [lib.pow(i,2) for i in x];

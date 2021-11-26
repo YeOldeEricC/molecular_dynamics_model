@@ -15,7 +15,7 @@
 - coloured err outputs				£DONE
 - err outp w/ src fn & ln 			#DONE
 - err outp w/ func src fn & ln 		#DONE
-- rejig err messages				
+- rejig err messages				#KUTD
 
 ## RELABELLING FNS
 - math lib trig						#DONE
