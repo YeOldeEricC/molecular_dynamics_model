@@ -8,16 +8,18 @@
 #UGNT - urgent
 #WNND - when needed
 #KUTD - keeping up to date
+#IGNR - ignore for now
+#FUTR - for future / needed in future
 
 ## DEBUG ##
 - printable notes					#KUTD
 - support for coloured prints		#DONE
-- coloured err outputs				£DONE
+- coloured err outputs				#DONE
 - err outp w/ src fn & ln 			#DONE
 - err outp w/ func src fn & ln 		#DONE
 - rejig err messages				#KUTD
 
-## RELABELLING FNS
+## RELABELLING ##
 - math lib trig						#DONE
 - math lib sqrt						#DONE
 - cmath lib trig					#DONE
@@ -25,7 +27,7 @@
 - numpy arr shape					#DONE
 - pow (normally x**n)				#DONE
 
-## VECTOR MATHS - filling as needed
+## VECTOR MATHS ##
 - dot prod							#DONE
 - dot prod with self				#DONE
 - dot prof of >2 vecs				#DONE
@@ -37,9 +39,23 @@
 - 3d vec check						#DONE
 - same len vec check				#DONE
 
+## NUMERICAL METHODS ##
+- RK4 method						#TODO
+- Euler method						#TODO
+- better than RK4 method?			#TODO
+- trapezium rule for area?			#TODO
+- Gauss-Legendre					#TODO
+- Adaptive/matrix Gauss-Legendre?	#TODO
+- Gauss-Laguerre					#TODO
+- Gauss-Konrod						#TODO
 
-## PLOTTING - underway
+## PLOTTING ##
 - initialise						#DONE
 - display							#DONE
 - x,y line plot w/ formatting		#DONE
 - title & label formatting			#DONE
+- 3d plots							#TODO
+- vector vield plots				#TODO
+- scatter plots						#TODO
+- bar plots							#TODO
+- errorbar scatter plots			#TODO

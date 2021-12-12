@@ -25,7 +25,6 @@ if function or marked with one of the following symbols, it means:
 	#- mnt -#	=>	made, not tested
 	#- mnw -#	=>	made, not working
 	#- nmy -#	=>	not made yet
-	#- 
 
 -- ROUGH LETTER KEY --
 m - made
@@ -52,7 +51,6 @@ col_txt(col,txt) - returns string of coloured text
 err_inf() - prints code and func source files and linenumbers
 err_msg(fname,msg) - exits with error message for function
 err_log(fname,msg) - prints error message for function w/o exit
-
 
  --    RELABEL    --
 sin(val) - returns sin of val
@@ -90,6 +88,14 @@ vec_dotL(v_list) - returns dot product of a list of vectors (my notation)
 vec_dist(v0,v1) - returns the distance between two vectors
 c_vec_dist(v0,v1) - returns complex valued distance between two vectors
 
+  -    NUMERIC    -
+RK4 - Runge-Kutte 4
+RK38 - Runge-Kutte 3/8
+Euler - euler method for system of ODEs
+GLegendre - implementation of Gauss-Legendre
+GLaguerre - implementation of Gauss-Laguerre
+GKonrod - implementation of Gauss-Konrod integration
+
  --     PLOTS     --
   -    FMT_STR    -
 The format string is just a set of characters which describe how the outp plot
@@ -119,7 +125,7 @@ pl_disp() - display plot
 pl_font(name) - set font to specific 'name', or Times if 'def'
 pl_label(title,xlab,ylab,legend) - overall plot labels
 pl_lineL(fmt,x,y) - simple line plot with [L]ittle formatting
-pl_lineF(fmt,title,x,y) - simple line plot with [F]ull formatting
+pl_lineF(fmt,x,y,label) - simple line plot with [F]ull formatting
 pl_fw(fwc) - returns string for fontweight for title formatting
 pl_pc(posc) - returns position string for the legend for position code
 
@@ -349,6 +355,20 @@ def c_vec_dist(v0,v1) :
 		i_list = range(0,v_len);
 		return c_sqrt(sum([pow((v1[i]-v0[i]),2) for i in i_list]));
 
+#-     NUMERIC     -#
+#- nmy -#
+def RK4() : return 0;
+#- nmy -#
+def RK38() : return 0;
+#- nmy -#
+def Euler() : return 0;
+#- nmy -#
+def GLegendre() : return 0;
+#- nmy -#
+def GLaguerre() : return 0;
+#- nmy -#
+def GKonrod() : return 0;
+
 #--     PLOTS     --#
 #- mtw -#
 def pl_init() : plt.figure();
@@ -366,7 +386,7 @@ def pl_fw(fwc) :
 	# in the case that no above cases have been satisfied
 	else :
 		err_inf();
-		err_log('PL_FW ERR','no known code used, setting to default');
+		err_log('PL_FW','no known code used, setting to default');
 		err_log('MSG','continuing..');
 		print('\n');
 		return 'normal';
