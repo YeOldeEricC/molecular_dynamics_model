@@ -9,7 +9,7 @@ import random as rdm;
 x = lib.pts(-2,2,150);
 y = [2**i for i in x];
 
-# lib.pl_init();
-# lib.pl_lineF('k_w1a0.75',x,y,'test');
-# lib.pl_label('Tys8wbLys8pur','test','x','y');
-# lib.pl_disp();
+lib.pl_init();
+lib.pl_lineF('k_w1a0.75',x,y,'test');
+lib.pl_label('Tys8wbLys8pur','test','x','y');
+lib.pl_disp();
