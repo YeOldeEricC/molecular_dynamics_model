@@ -61,3 +61,4 @@ alias π="source .bash_profile"
 alias ∫="bash"
 # make file
 alias mkf="touch"
+alias mkd="mkdir"

@@ -1,0 +1,14 @@
+### TODO FOR PROJ SETUP
+
+## KEY ##
+#DONE - done
+#IFND - if needed
+#INPR - in progress
+#TODO - to be done
+#UGNT - urgent
+#WNND - when needed
+#KUTD - keeping up to date
+#IGNR - ignore for now
+#FUTR - for future / needed in future
+
+## 3D GRAPHICS SIM ##

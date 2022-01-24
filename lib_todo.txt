@@ -30,7 +30,7 @@
 ## VECTOR MATHS ##
 - dot prod							#DONE
 - dot prod with self				#DONE
-- dot prof of >2 vecs				#DONE
+- dot prod of >2 vecs				#DONE
 - elem-wise addition				#DONE
 - elem-wise subtraction				#DONE
 - cross prod						#DONE
@@ -57,5 +57,5 @@
 - 3d plots							#TODO
 - vector vield plots				#TODO
 - scatter plots						#TODO
-- bar plots							#TODO
+- bar plots							#IFND
 - errorbar scatter plots			#TODO
