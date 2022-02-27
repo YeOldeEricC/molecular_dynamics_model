@@ -15,6 +15,8 @@ import time,os,sys,math as ma,cmath as cma, numpy as np;
 from matplotlib import pyplot as plt;
 from matplotlib.animation import FuncAnimation as anim;
 import vpython as vis;
+# vital for plots to work on my chromeOS tablet
+matplotlib.use('TkAgg');
 
 
 ################################################################################
