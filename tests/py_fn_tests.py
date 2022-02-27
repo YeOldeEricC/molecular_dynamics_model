@@ -13,6 +13,8 @@ Any successful test will have its own test file.
 ### GENERAL IMPORTS ###
 import time,os,sys,math as ma,cmath as cma, numpy as np;
 from matplotlib import pyplot as plt;
+from matplotlib.animation import FuncAnimation as anim;
+import vpython as vis;
 
 
 ################################################################################
@@ -21,8 +23,10 @@ from matplotlib import pyplot as plt;
 ## TEST CODE ##
 
 
+## RK4 APPLIED TO MANY BODY PROBLEM ##
 
-
+# dvi/dt = k * sum[ mi * (xj-xi)/|xj-xi|^3 ]
+# dxi/dt = vi
 
 
 
